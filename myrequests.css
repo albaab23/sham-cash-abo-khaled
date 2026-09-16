@@ -12,10 +12,17 @@ h1 {
     font-size: 2rem;
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 }
 ul {
     display: flex;
     flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    padding: 0;
+    margin: 15px auto;
+    list-style: none;
+    width: fit-content;
     gap: 5px;
     li {
         text-decoration: none;
@@ -26,6 +33,8 @@ ul {
    padding: 15px;
    border-radius: 40px;
    cursor: pointer;
+   text-align: center;
+   white-space: nowrap;
     }
     li a {
         text-decoration: none;
@@ -65,10 +74,16 @@ button {
 @media (max-width: 768px) {
     #product-container {
         grid-template-columns: 1fr;
+
+    }
+    .conatiner {
+        width: 90%;
+        max-width: 380px;
+        padding: 16px;
     }
 }
 @media (max-width: 768px) {
-    h2 {
+    h1 {
         font-size: 1.1rem;
     }
     .container button, .container a {

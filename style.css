@@ -67,6 +67,7 @@ ul {
         border-radius: 15px;
         width: 100%;
         font-size: 1rem;
+        box-sizing: border-box;
      
     }
 }
@@ -125,6 +126,9 @@ footer span {
     }
     .cart {
         width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     
 }

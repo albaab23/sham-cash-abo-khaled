@@ -60,7 +60,7 @@ grid-template-columns: repeat(3, 1fr);
     font-size: 17px;
     font-weight: 700;
 
-    border-right: 4px solid #2563eb;
+
 }
 .buttons {
     display: flex;

@@ -104,9 +104,14 @@ footer span {
     }
 
     ul {
-        width: 100%;
+        
         gap: 10px;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
     }
 
     ul li {
@@ -114,9 +119,12 @@ footer span {
         margin-right: 0;
         margin-top: 0;
         border-radius: 10px;
-        padding: 10px 5px;
+        padding: 10px 20px ;
         text-align: center;
         font-size: 0.9rem;
+    }
+    .cart {
+        width: 90%;
     }
     
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+         <h1>شام كاش - خدمات ابو خالد</h1>
+    <ul>
+        <li><a href="index.html">طلب جديد</a></li>
+        <li><a href="myrequests.html">طلباتي</a></li>
+    </ul>
+    </div>
+   
+    <div class="form">
+        <div class="cart">
+            <select id="selection">
+                <option value="">اختر طريقة الدفع</option>
+                <option value="سيرياتيل كاش ">سيرياتيل كاش </option>
+                <option value="رصيد سيرياتيل">رصيد سيرياتيل</option>
+                <option value="رصيد MTN">رصيد MTN</option>
+            </select>
+              <input type="text" placeholder="اكتب المبلغ المراد تحويله" id="price">
+        <input type="text" placeholder="رقم حساب الشام كاش" id="sham">
+        <input type="text" placeholder="المبلغ بعد العمولة" id="discount">
+        <input type="text" placeholder="اكتب الرقم المحول منه" id="number">
+        <button id="add-btn" onclick="addbutton()">تحويل</button>
+        </div>
+      
+    </div>
+    <footer><span>للتواصل: </span> <a href="https://wa.me">0934995799 </a>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

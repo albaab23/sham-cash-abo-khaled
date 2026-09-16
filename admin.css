@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+#requestslist {
+    text-align: center;
+        font-size: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.request {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 20px;
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+    box-sizing: border-box;
+    min-width: 0;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+
+    transition: all 0.25s ease;
+
+    direction: rtl;
+
+    display: flex;
+    flex-direction: column;
+}
+.request:hover {
+    transform: translate(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 12);
+}
+.request p {
+    margin: 7px 0;
+    padding: 10px 12px;
+
+    background: #f8fafc;
+    border-radius: 9px;
+
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+.request p:first-child {
+    background: #f1f5f9;
+    color: #111827;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    border-right: 4px solid #2563eb;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+}
+.buttons button {
+    flex: 1;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 11px 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+.buttons button:first-child {
+    background: #16a34a;
+}
+
+.buttons button:first-child:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+.buttons button:last-child {
+    background: #dc2626;
+}
+
+.buttons button:last-child:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+
+
+    .request p {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+
+    .request p:first-child {
+        font-size: 16px;
+    }
+
+@media (max-width: 768px) {
+    #requestslist {
+        grid-template-columns: 1fr;
+    }
+}

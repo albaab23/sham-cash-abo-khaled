@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1 {
+    font-size: 2rem;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    li {
+        text-decoration: none;
+        list-style: none;
+        margin-right: 20px;
+        margin-top: 15px;
+   box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.1);
+   padding: 15px;
+   border-radius: 40px;
+   cursor: pointer;
+    }
+    li a {
+        text-decoration: none;
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+.cart {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px 20px;
+    max-width: 400px;
+       box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.1);
+     h4 {
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 1.5rem;
+
+     }
+    input, select {
+        padding: 15px;
+        border: 1px solid black;
+        margin: 10px;
+        width: 100% !important;
+        border-radius: 10px;
+    }
+    #add-btn {
+        padding: 15px;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        width: 100%;
+        font-size: 1rem;
+        box-sizing: border-box;
+     
+    }
+}
+.pay {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px 20px;
+    max-width: 400px;
+    margin-bottom: 30px;
+       box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.1);
+       h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+       }
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+    .cash {
+background-color: purple;
+padding: 15px;
+border: none;
+border-radius: 10px;
+color: white;
+font-size: 15px;
+cursor: pointer;
+width:100%;
+    }
+    .credit {
+background-color: white;
+padding: 15px;
+border: 1px solid black;
+border-radius: 10px;
+color: black;
+font-size: 15px;
+cursor: pointer;
+width:100%;
+
+}
+}
+}
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-left: 0;
+        text-align: center;
+        white-space: normal;
+    }
+
+    ul {
+        
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    ul li {
+        flex: 1;
+        margin-right: 0;
+        margin-top: 0;
+        border-radius: 10px;
+        padding: 10px 20px ;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    .cart {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+}
+.footer {
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(203, 200, 200);
+            margin-top: 20px;
+            font-size: 1.75rem;
+            
+            a {
+                text-decoration: none;
+                color: black;
+            
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="main">
+         <h1>خدمات ابو خالد</h1>
+    <ul>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+        <li><a href="myrequests.html">طلباتي</a></li>
+    </ul>
+    </div>
+   
+    <div class="form">
+      
+        <div class="cart">
+              <h4>اتمام الطلب</h4>
+            <label for="selection">اختر جهة الدفع</label>
+            <select id="selection">
+                <option value="">اختر </option>
+               <option value="تحويل رصيد سيرياتيل">تحويل رصيد سيرياتيل</option>
+               <option value="تحويل فاتورة سيرياتيل">تحويل فاتورة سيرياتيل</option>
+               <option value="تحويل كاش سيرياتيل">تحويل كاش سيرياتيل</option>
+            </select>
+            <label for="price">المبلغ المراد تحويله</label>
+              <input type="text" id="price">
+        <label for="discount">المبلغ بعد العمولة</label>
+        <input type="text"  id="discount">
+        <label for="number">رقم الاتصال</label>
+        <input type="text" id="number">
+         <div class="pay">
+            <h1>طريقة الدفع</h1>
+            <div class="buttons">
+                 <button class="cash" onclick="selectcash()">نقدا</button>
+            <button class="credit"  onclick="selectcredit()">دين</button>
+            </div>
+        
+        </div>
+         <button id= "add-btn" onclick= 'addbutton()'>اطلب</button>
+        </div>
+       
+        </div>
+      
+    </div>
+    <div class="footer">
+        <a href=""> 0934995799 </a>   <span>: للتواصل </span>
+       </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="syriatel.js"></script>
+</body>
+</html>

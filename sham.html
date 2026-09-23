@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sham.css">
+</head>
+<body>
+    <div class="main">
+       <h1>خدمات ابو خالد</h1>
+    <ul>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+        <li><a href="myrequests.html">طلباتي</a></li>
+    </ul>
+    </div>
+   
+    <div class="form">
+      
+        <div class="cart">
+              <h4>اتمام الطلب</h4>
+            <label for="selection">اختر جهة الدفع</label>
+            <select id="selection">
+                <option value="">اختر </option>
+                <option value="سيرياتيل كاش ">سيرياتيل كاش </option>
+                <option value="رصيد سيرياتيل">رصيد سيرياتيل</option>
+                <option value="رصيد MTN">رصيد MTN</option>
+                                <option value="شام كاش">شام كاش</option>
+            </select>
+            <label for="price">المبلغ المراد تحويله</label>
+              <input type="text" id="price">
+        <label for="discount">المبلغ بعد العمولة</label>
+        <input type="text"  id="discount">
+        <label for="number">رقم الاتصال</label>
+        <input type="text" id="number">
+         <div class="pay">
+            <h1>طريقة الدفع</h1>
+            <div class="buttons">
+                 <button class="cash" onclick="selectcash()">نقدا</button>
+            <button class="credit"  onclick="selectcredit()">دين</button>
+            </div>
+        
+        </div>
+         <button id= "add-btn" onclick='addbutton()'>اطلب</button>
+        </div>
+       
+        </div>
+      
+    </div>
+    <div class="footer">
+        <a href=""> 0934995799 </a>   <span>: للتواصل </span>
+       </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="sham.js"></script>
+
+</body>
+</html>

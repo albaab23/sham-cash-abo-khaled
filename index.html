@@ -7,35 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-         <h1>شام كاش - خدمات ابو خالد</h1>
+      <div class="main">
+         <h1>خدمات ابو خالد</h1>
     <ul>
-        <li><a href="index.html">طلب جديد</a></li>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
         <li><a href="myrequests.html">طلباتي</a></li>
     </ul>
     </div>
-   
-    <div class="form">
-        <div class="cart">
-            <select id="selection">
-                <option value="">اختر طريقة الدفع</option>
-                <option value="سيرياتيل كاش ">سيرياتيل كاش </option>
-                <option value="رصيد سيرياتيل">رصيد سيرياتيل</option>
-                <option value="رصيد MTN">رصيد MTN</option>
-            </select>
-              <input type="text" placeholder="اكتب المبلغ المراد تحويله" id="price">
-        <input type="text" placeholder="رقم حساب الشام كاش" id="sham">
-        <input type="text" placeholder="المبلغ بعد العمولة" id="discount">
-        <input type="text" placeholder="اكتب الرقم المحول منه" id="number">
-        <button id="add-btn" onclick="addbutton()">تحويل</button>
+
+ <div class="container">
+        <div class="img">
+            <a href="sham.html">
+                    <img src="images/1000419654.jpg">
+                    <p>شام كاش</p> 
+            </a>
         </div>
-      
+<div class="img">
+    <a href="mtn.html">
+        <img src="images/1000419656.jpg">
+    <P>رصيد سيرياتيل & MTN</P>
+    </a>
+    
+</div>
+<div class="img">
+    <a href="games.html"> <img src="images/1000419658.jpg"></a>
+<p>شحن العاب</p>
+   
+</div>
+<div class="img">
+     <a href="bills.html"><img src="images/1000419660.jpg"></a>
+     <p>دفع فواتير</p>
+</div>
+ </div>
+    <div class="footer">
+     <a href=""> 0934995799 </a>   <span>: للتواصل </span>
     </div>
-    <footer><span>للتواصل: </span> <a href="https://wa.me">0934995799 </a>
-    </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
-
 </body>
 </html>

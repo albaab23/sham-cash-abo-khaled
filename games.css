@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1 {
+    font-size: 2rem;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    li {
+        text-decoration: none;
+        list-style: none;
+        margin-right: 20px;
+        margin-top: 15px;
+   box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.1);
+   padding: 15px;
+   border-radius: 40px;
+   cursor: pointer;
+    }
+    li a {
+        text-decoration: none;
+    }
+}
+.id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #game-id {
+width: 50%;
+border: 1px solid black;
+padding: 15px;
+border-radius: 15px;
+    }
+    #game-id[placeholder] {
+        text-align: center;
+    }
+}
+.carts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.img {
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+
+    img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+    }
+    p {
+        direction: rtl;
+        margin-right: 10px;
+        font-size: 1.25rem;
+    }
+}
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    h2 {
+        margin-right: 10px;
+        font-size: 1.50rem;
+    }
+    h3{
+        margin-left: 10px;
+        font-size: 1.50rem;
+    }
+}
+#btn {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    margin-bottom: 10px;
+}
+.jawaker-btn {
+    width: 80%;
+margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    margin-top: auto;
+}
+.jawaker-btn2 {
+    width: 80%;
+margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    margin-top: 100px;
+}
+#jawaker {
+    text-align: center;
+}
+.footer {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 200, 200);
+    margin-top: 20px;
+    font-size: 1.75rem;
+    
+    a {
+        text-decoration: none;
+        color: black;
+    
+    }
+}
+@media (max-width: 768px) {
+    .carts {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+
+    }
+    .carts .img {
+        width:100%;
+        max-width: 400px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 16px;
+    }
+}

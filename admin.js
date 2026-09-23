@@ -16,7 +16,7 @@ checkauth().then((isLoggedIn) => {
     }
 })
 async function loadrequests() {
-    const conatiner = document.getElementById('requestslist')
+    const container = document.getElementById('requestslist')
     const { data: requests, error } = await _supabase.from('requests').select('*').eq('status', 'قيد الانتظار').order('created_at', {ascending: false})
     if (error) {
         conatiner.innerHTML = '<p> لا توجد طلبات</p>'
@@ -26,27 +26,120 @@ async function loadrequests() {
         conatiner.innerHTML = '<p> لا توجد طلبات</p>'
         return
     }
-    conatiner.innerHTML = ''
+    container.innerHTML = ''
     requests.forEach(function (req) {
-        conatiner.innerHTML += `
-    <div class="request">
-     <p>رقم الطلب:${req.id}</p>
-    <p>المبلغ:${req.price}</p>
-      <p>حساب الشام كاش:${req.sham}</p>
-        <p>الرقم المحول منه:${req.number}</p>
-          <p>طريقة الدفع:${req.select}</p>
-          
-             <div class="buttons">
+        if (req.service_type === 'شام كاش'){
+            container.innerHTML  += `
+            <div class= "container">
+               <h1>نوع الخدمة: ${req.service_type}</h1>
+                 <h1>المبلغ المراد تحويله:${req.price}</h1>
+             <p>الميلغ بعد العمولة:${req.discount}</p>
+            <p>جهة الدفع: ${req.select}</p>
+             <p>رقم الاتصال: ${req.number}</p>
+           <p>طريقة الدفع:${req.payment_method}</p>
+            <P>الحالة:${req.status}</p>
+              ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                                      <div class="buttons">
     <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
     <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
              </div>
-    </div>
-    
-    `
+            </div>
+            
+            `
+        }else if(req.service_type === 'فواتير') {
+            container.innerHTML  += `
+             <div class="container">
+            <h1>نوع الخدمة: ${req.service_type}</h1>
+            <h1>المبلغ المراد تحويله:${req.price}</h1>
+             <p>الميلغ بعد العمولة:${req.discount}</p>
+           <p>طريقة الدفع:${req.payment_method}</p>
+            <P>الحالة:${req.status}</p>
+              <p>الشركة ${req.select}</p>
+             <p>السرعة ${req.sham}</p>
+              <p>رقم الارضي: ${req.number}</p>
+            ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                                    <div class="buttons">
+    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
+    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
+             </div>
+            </div>
+          
+            `
+        }else if(req.service_type === 'سيرياتيل'){
+        
+           container.innerHTML +=` <div class= "container">
+            <h1>نوع الخدمة: ${req.service_type}</h1>
+              <h1>المبلغ المراد تحويله:${req.price}</h1>
+          <p>الميلغ بعد العمولة:${req.discount}</p>
+          <p>رقم الاتصال: ${req.number}</p>
+           <p>جهة الدفع: ${req.select}</p>
+        <p>طريقة الدفع:${req.payment_method}</p>
+         <P>الحالة:${req.status}</p>
+           ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                                   <div class="buttons">
+    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
+    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
+             </div>
+         </div>
+         `
+        
+        
+        
+        }else if(req.service_type === 'MTN'){
+        container.innerHTML +=` <div class= "container">
+            <h1>نوع الخدمة: ${req.service_type}</h1>
+              <h1>المبلغ المراد تحويله:${req.price}</h1>
+          <p>الميلغ بعد العمولة:${req.discount}</p>
+          <p>رقم الاتصال: ${req.number}</p>
+           <p>جهة الدفع: ${req.select}</p>
+        <p>طريقة الدفع:${req.payment_method}</p>
+         <P>الحالة:${req.status}</p>
+           ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                                   <div class="buttons">
+    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
+    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
+             </div>
+         </div>
+         `
+        
+            }else if (req.service_type === 'جواكر') {
+                container.innerHTML +=` <div class= "container">
+                <h1>نوع الخدمة: ${req.service_type}</h1>
+                  <h1>المبلغ المراد تحويله:${req.price}</h1>
+              <p>الميلغ بعد العمولة:${req.discount}</p>
+                <p> معرف الاستخدام: ${req.number}</p>
+                <p>الكمية: ${req.sham}</p>
+            <p>طريقة الدفع:${req.payment_method}</p>
+             <P>الحالة:${req.status}</p>
+               ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                                       <div class="buttons">
+    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
+    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
+             </div>
+             </div>
+             `
+            }else if(req.service_type === 'العاب') {
+               container.innerHTML += `
+                <div class= "container">
+                <h1>نوع الخدمة: ${req.service_type}</h1>
+                <h1>السعر:${req.price}</h1>
+                <p> معرف الاستخدام: ${req.number}</p>
+                <p>الكمية: ${req.select}</p>
+             <P>الحالة:${req.status}</p>
+               ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+                                           <div class="buttons">
+    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
+    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
+             </div>
+             </div>
+               `
+            }
     })
 }
 async function updateStatus(id, newstatus) {
-    const { error } = await _supabase.from('requests').update({ status: newstatus }).eq('id', id)
+    const noteinput = document.getElementById('note')
+    const notevalue = noteinput ? noteinput.value : ''
+    const { error } = await _supabase.from('requests').update({ status: newstatus, note: notevalue }).eq('id', id)
     if (error) {
         alert('حدث خطا اثناء التحديث')
     } 

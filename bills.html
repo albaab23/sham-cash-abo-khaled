@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bills.css">
+</head>
+<body>
+   <div class="main">
+         <h1>خدمات ابو خالد</h1>
+    <ul>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+        <li><a href="myrequests.html">طلباتي</a></li>
+    </ul>
+    </div>
+   
+    <div class="form">
+      
+        <div class="cart">
+              <h4>اتمام الطلب</h4>
+            <label for="company">اختر الشركة</label>
+            <select id="company">
+                <option value="">اختر </option>
+                <option value="ناس">ناس</option>
+                <option value="برونت">برونت</option>
+                <option value="اينت">اينت</option>
+                                <option value="رنت">رنت</option>
+                            <option value="الكم">الكم</option>
+                             <option value="ليما">ليما</option>
+                              <option value="سوا">سوا</option>
+                               <option value="اية">اية</option>
+                                <option value="يارا">يارا</option>
+                                 <option value="بطاقات">بطاقات</option>
+                                  <option value="هايبر">هايبر</option>
+                                   <option value="ويف">ويف</option>
+                                    <option value="امنية">امنية</option>
+                                     <option value="فيو">فيو</option>
+                                      <option value="ليزر">ليزر</option>
+                                       <option value="متس">متس</option>
+                                        <option value="سما">سما</option>
+                                         <option value="زاد">زاد</option>
+                                          <option value="دنيا">دنيا</option>
+                                           <option value="هاي فاي">هاي فاي</option>
+                                            <option value="تكامل">تكامل</option>
+                                             <option value="لاين">لاين</option>
+                                              <option value="الجمعية">الجمعية</option>
+            </select>
+            <label for="speed">اختر السرعة</label>
+            <select id="speed">
+                <option value="">اختر </option>
+                <option value="512 Mbps 140 السعر">512 Mbps 140 السعر</option>
+             <option value="1 Mbps 185 السعر ">1 Mbps 185 السعر </option>
+             <option value="2 Mbps 200 السعر">2 Mbps 240 السعر</option>
+             <option value="4 Mbps 380 السعر ">4 Mbps 380 السعر </option>
+             <option value="8 Mbps 640 السعر">8 Mbps 640 السعر</option>
+             <option value="16 Mbps 830 السعر">16 Mbps 830 السعر</option>
+            </select>
+            <label for="price">المبلغ المراد تحويله</label>
+              <input type="text" id="price">
+        <label for="discount">المبلغ بعد العمولة</label>
+        <input type="text"  id="discount">
+        <label for="number">رقم الارضي</label>
+        <input type="text" id="number">
+         <div class="pay">
+            <h1>طريقة الدفع</h1>
+            <div class="buttons">
+                 <button class="cash" onclick="selectcash()">نقدا</button>
+            <button class="credit"  onclick="selectcredit()">دين</button>
+            </div>
+        
+        </div>
+         <button id= "add-btn" onclick="addbutton()">اطلب</button>
+        </div>
+       
+        </div>
+      
+    </div>
+    <div class="footer">
+        <a href=""> 0934995799 </a>   <span>: للتواصل </span>
+       </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="bills.js"></script>
+</body>
+</html>

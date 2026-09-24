@@ -1,108 +1,141 @@
-body {
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap");
+
+:root {
+    --bg: #eef4f3;
+    --surface: #ffffff;
+    --ink: #12332e;
+    --muted: #5d7470;
+    --line: #d7e5e1;
+    --brand: #0f766e;
+    --brand-dark: #0b5c56;
+    --brand-soft: #e6f4f2;
+    --danger: #dc2626;
+    --shadow: 0 14px 36px rgba(15, 51, 46, 0.1);
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    direction: rtl;
+    background:
+        radial-gradient(circle at top right, rgba(201, 162, 39, 0.14), transparent 28%),
+        linear-gradient(180deg, #f7fbfa 0%, var(--bg) 100%);
+    color: var(--ink);
+    font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+}
+
 h2 {
     text-align: center;
-    font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin: 24px 16px 12px;
 }
+
 .nav {
     display: flex;
-    flex-direction: row;
-  
+    justify-content: center;
 }
-a {
-    text-decoration: none;
-    border-radius: 15px;
-    padding: 40px;
-    text-align: center;
-    margin: 0 auto;
 
-
-}
-ul {
+.nav ul {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin: 0 auto 18px;
+    padding: 0;
+}
 
-}
-li {
-    text-decoration: none;
+.nav li {
     list-style: none;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.1);
-    text-align: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
 }
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--brand-dark);
+    font-weight: 800;
+    padding: 12px 22px;
+    text-align: center;
+    margin: 0;
+    border-radius: 999px;
+}
+
+.nav a:hover {
+    background: var(--brand);
+    color: #fff;
+}
+
 #product-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-     gap: 15px;
-    
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto 32px;
 }
+
 .container {
-   display: flex;
-   flex-direction: column;
-   box-shadow: 0 10px 25px rgba(0, 0 , 0, 0.2);
-    
-h1 {
-    text-align: center;
-       background-color: #f5f6f8;
-       border-radius: 10px;
-       padding: 10px;
-          font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: var(--shadow);
 }
-p {
+
+.container h1,
+.container p {
+    margin: 0;
     text-align: center;
-    background-color: #f5f6f8;
-     border-radius: 10px;
-     padding: 10px;
-        font-family: 'Courier New', Courier, monospace;
-  
-}
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
+    background: var(--brand-soft);
     border-radius: 10px;
-    background-color: red;
+    padding: 10px;
     font-size: 1rem;
 }
+
+.container button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
 }
+
 .no-orders {
     text-align: center;
-    font-size: 3rem;
-    margin: 0 auto;
+    font-size: 1.6rem;
+    margin: 40px auto;
+    color: var(--muted);
 }
+
+@media (max-width: 900px) {
+    #product-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     #product-container {
         grid-template-columns: 1fr;
+    }
 
-    }
     .container {
-        width:100%;
-        max-width: 400px;
-        text-align: center;
+        width: min(400px, 100%);
         margin: 0 auto;
-        padding: 16px;
     }
-}
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.50rem;
-        margin-top: 40px;
-    }
-    .container button, .container a {
-        width: 100%;
-        border-radius: 8px;
-    }
-    .conatiner li {
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 20px;
-    }
-    
 }

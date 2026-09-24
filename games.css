@@ -131,6 +131,40 @@ margin: 0 auto;
     }
 }
 @media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-left: 0;
+        text-align: center;
+        white-space: normal;
+    }
+
+    ul {
+        
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    ul li {
+        flex: 1;
+        margin-right: 0;
+        margin-top: 0;
+        border-radius: 10px;
+        padding: 10px 20px ;
+        text-align: center;
+        font-size: 0.9rem;
+    }
     .carts {
       display: flex;
       flex-direction: column;
@@ -139,7 +173,7 @@ margin: 0 auto;
 
     }
     .carts .img {
-        width:100%;
+        width:80%;
         max-width: 400px;
         text-align: center;
         margin: 0 auto;

@@ -28,25 +28,8 @@ async function loadrequests() {
     }
     container.innerHTML = ''
     requests.forEach(function (req) {
-        if (req.service_type === 'شام كاش'){
-            container.innerHTML  += `
-            <div class= "container">
-               <h1>نوع الخدمة: ${req.service_type}</h1>
-                 <h1>المبلغ المراد تحويله:${req.price}</h1>
-             <p>الميلغ بعد العمولة:${req.discount}</p>
-            <p>جهة الدفع: ${req.select}</p>
-             <p>رقم الاتصال: ${req.number}</p>
-           <p>طريقة الدفع:${req.payment_method}</p>
-            <P>الحالة:${req.status}</p>
-              ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
-                                                      <div class="buttons">
-    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
-    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
-             </div>
-            </div>
-            
-            `
-        }else if(req.service_type === 'فواتير') {
+
+         if(req.service_type === 'فواتير') {
             container.innerHTML  += `
              <div class="container">
             <h1>نوع الخدمة: ${req.service_type}</h1>

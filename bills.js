@@ -1,34 +1,24 @@
-const supabase_url = '  https://tirzgdurubwiyankpvyi.supabase.co/'
+const supabase_url =  '  https://tirzgdurubwiyankpvyi.supabase.co/'
 const supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpcnpnZHVydWJ3aXlhbmtwdnlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkzNDI3MDgsImV4cCI6MjEwNDkxODcwOH0.KMW5EtFYmKAI-kKTqcVEKKn3GyB5DBsRkuvBGg5xdjQ'
 const _supabase = supabase.createClient(supabase_url, supabase_key)
-let selectedmethod = 'نقدا'
-function selectcash() {
-    selectedmethod = 'نقدا'
-}
-function selectcredit() {
-    selectedmethod = 'دين'
-}
 async function addbutton() {
-    let price = document.getElementById('price').value
     let number = document.getElementById('number').value
-    let discount = document.getElementById('discount').value
+    let sham = document.getElementById('sham').value
     let select = document.getElementById('company').value
     let speed = document.getElementById('speed').value
-    if (!price || !number  || !select || !speed) {
+    if ( !number  || !select || !speed || !sham) {
         alert('يرجى ملئ جميع الحقول')
         return
     }
     let secretcode = crypto.randomUUID()
     let newrequest = {
-        price: price ,
+        sham: sham,
         number: number,
-        discount: discount,
         select: select,
-        sham: speed,
+        speed: speed,
         secret_code: secretcode,
         status: "قيد الانتظار",
         note: '',
-        payment_method: selectedmethod,
         service_type: 'فواتير' 
     }
     const {data, error} = await _supabase.from('requests').insert([newrequest]).select()
@@ -42,12 +32,3 @@ saved.push({id: data[0].id, secret_code: secretcode })
 localStorage.setItem('myrequests_ids', JSON.stringify(saved))
 window.location.href = 'myrequests.html'
 }
-
-price.addEventListener('input', function() {
-    let amount = parseFloat(price.value)
-    if(!isNaN(amount)) {
-        discount.value = Math.floor(amount * 1.2)
-    }else {
-        discount.value = ''
-    }
-})

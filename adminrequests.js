@@ -26,12 +26,13 @@ if (requests.length === 0){
 requests.forEach(  (req) => {
 if(req.service_type === 'فواتير') {
     productcontainer.innerHTML  += `
-     <div class="container">
+                    <div class="container">
     <h1>نوع الخدمة: ${req.service_type}</h1>
     <P>الحالة:${req.status}</p>
-      <p>الشركة ${req.select}</p>
-     <p>السرعة ${req.sham}</p>
-      <p>رقم الارضي: ${req.number}</p>
+    <p>السرعة:${req.speed}</p>
+      <p>الشركة :${req.select}</p>
+     <p>رقم الاتصال:${req.sham}</p>
+      <p>رقم الشام كاش:${req.number}</p>
     </div>
   
     `
@@ -42,6 +43,7 @@ if(req.service_type === 'فواتير') {
       <h1>المبلغ المراد تحويله:${req.price}</h1>
   <p>الميلغ بعد العمولة:${req.discount}</p>
   <p>رقم عملية الشام كاش: ${req.number}</p>
+  <p>رقم الاتصال:${req.sham}</p>
    <p>جهة الدفع: ${req.select}</p>
  <P>الحالة:${req.status}</p>
  </div>
@@ -56,6 +58,7 @@ if(req.service_type === 'فواتير') {
   <p>الميلغ بعد العمولة:${req.discount}</p>
   <p>رقم عملية الشام كاش: ${req.number}</p>
    <p>جهة الدفع: ${req.select}</p>
+    <p>رقم الاتصال:${req.sham}</p>
  <P>الحالة:${req.status}</p>
  </div>
  `
@@ -76,6 +79,7 @@ if(req.service_type === 'فواتير') {
         <h1>نوع الخدمة: ${req.service_type}</h1>
         <h1>السعر:${req.price}</h1>
         <p> معرف الاستخدام: ${req.number}</p>
+        <p>رقم عملية الشام كاش:${req.sham}</p>
         <p>الكمية: ${req.select}</p>
      <P>الحالة:${req.status}</p>
      </div>
@@ -84,4 +88,8 @@ if(req.service_type === 'فواتير') {
     }
 });
 }
-
+_supabase.channel('myrequests_realtime').on('postgres_changes', {event: '*', schema: 'public', table: 'requests'}, (payload) => {
+  displayrequests()
+})
+.subscribe()
+displayrequests()

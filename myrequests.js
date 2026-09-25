@@ -29,9 +29,10 @@ requests.forEach(  (req) => {
      <div class="container">
     <h1>نوع الخدمة: ${req.service_type}</h1>
     <P>الحالة:${req.status}</p>
-      <p>الشركة ${req.select}</p>
-     <p>السرعة ${req.sham}</p>
-      <p>رقم الارضي: ${req.number}</p>
+    <p>السرعة:${req.speed}</p>
+      <p>الشركة :${req.select}</p>
+     <p>رقم الاتصال:${req.sham}</p>
+      <p>رقم الشام كاش:${req.number}</p>
     ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
     </div>
   
@@ -43,6 +44,7 @@ requests.forEach(  (req) => {
       <h1>المبلغ المراد تحويله:${req.price}</h1>
   <p>الميلغ بعد العمولة:${req.discount}</p>
   <p>رقم عملية الشام كاش : ${req.number}</p>
+  <p>رقم الاتصال:${req.sham}</p>
    <p>جهة الدفع: ${req.select}</p>
  <P>الحالة:${req.status}</p>
    ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
@@ -58,6 +60,7 @@ requests.forEach(  (req) => {
   <p>الميلغ بعد العمولة:${req.discount}</p>
   <p>رقم عملية الشام كاش ${req.number}</p>
    <p>جهة الدفع: ${req.select}</p>
+    <p>رقم الاتصال:${req.sham}</p>
  <P>الحالة:${req.status}</p>
    ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
  </div>
@@ -80,6 +83,7 @@ requests.forEach(  (req) => {
         <h1>نوع الخدمة: ${req.service_type}</h1>
         <h1>السعر:${req.price}</h1>
         <p> معرف الاستخدام: ${req.number}</p>
+        <p>رقم عملية الشام كاش:${req.sham}</p>
         <p>الكمية: ${req.select}</p>
      <P>الحالة:${req.status}</p>
        ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}

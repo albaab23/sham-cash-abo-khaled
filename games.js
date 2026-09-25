@@ -3,7 +3,8 @@ const supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const _supabase = supabase.createClient(supabase_url, supabase_key)
 async function chargebutton(btn) {
     let game_id = document.getElementById('game-id').value
-    if (!game_id) {
+    let sham_number = document.getElementById('sham-number').value
+    if (!game_id || !sham_number) {
         alert('يرجى ملئ الحقل')
         return
     }
@@ -12,6 +13,7 @@ async function chargebutton(btn) {
     let cardprice = card.querySelector('.price h3').innerText
     let secretcode = crypto.randomUUID()
     let newrequest = {
+        sham: sham_number,
         number: game_id,
         select: cardquantity,
         price: cardprice,
@@ -32,11 +34,3 @@ localStorage.setItem('myrequests_ids', JSON.stringify(saved))
 window.location.href = 'myrequests.html'
 }
 
-price.addEventListener('input', function() {
-    let amount = parseFloat(price.value)
-    if(!isNaN(amount)) {
-        discount.value = Math.floor(amount * 1.2)
-    }else {
-        discount.value = ''
-    }
-})

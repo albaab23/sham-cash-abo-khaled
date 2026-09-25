@@ -1,0 +1,20 @@
+{
+    "name": "شام كاش - خدمات ابو خالد",
+    "short_name": "شام كاش",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2ecc71",
+    "icons": [
+      {
+        "src": "images/1000419658.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "images/1000419654.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

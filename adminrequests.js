@@ -24,32 +24,14 @@ if (requests.length === 0){
 
 
 requests.forEach(  (req) => {
-if (req.service_type === 'شام كاش'){
-    productcontainer.innerHTML  += `
-    <div class= "container">
-       <h1>نوع الخدمة: ${req.service_type}</h1>
-         <h1>المبلغ المراد تحويله:${req.price}</h1>
-     <p>الميلغ بعد العمولة:${req.discount}</p>
-    <p>جهة الدفع: ${req.select}</p>
-     <p>رقم الاتصال: ${req.number}</p>
-   <p>طريقة الدفع:${req.payment_method}</p>
-    <P>الحالة:${req.status}</p>
-      ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
-    </div>
-    
-    `
-}else if(req.service_type === 'فواتير') {
+if(req.service_type === 'فواتير') {
     productcontainer.innerHTML  += `
      <div class="container">
     <h1>نوع الخدمة: ${req.service_type}</h1>
-    <h1>المبلغ المراد تحويله:${req.price}</h1>
-     <p>الميلغ بعد العمولة:${req.discount}</p>
-   <p>طريقة الدفع:${req.payment_method}</p>
     <P>الحالة:${req.status}</p>
       <p>الشركة ${req.select}</p>
      <p>السرعة ${req.sham}</p>
       <p>رقم الارضي: ${req.number}</p>
-    ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
     </div>
   
     `
@@ -59,11 +41,9 @@ if (req.service_type === 'شام كاش'){
     <h1>نوع الخدمة: ${req.service_type}</h1>
       <h1>المبلغ المراد تحويله:${req.price}</h1>
   <p>الميلغ بعد العمولة:${req.discount}</p>
-  <p>رقم الاتصال: ${req.number}</p>
+  <p>رقم عملية الشام كاش: ${req.number}</p>
    <p>جهة الدفع: ${req.select}</p>
-<p>طريقة الدفع:${req.payment_method}</p>
  <P>الحالة:${req.status}</p>
-   ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
  </div>
  `
 
@@ -74,11 +54,9 @@ if (req.service_type === 'شام كاش'){
     <h1>نوع الخدمة: ${req.service_type}</h1>
       <h1>المبلغ المراد تحويله:${req.price}</h1>
   <p>الميلغ بعد العمولة:${req.discount}</p>
-  <p>رقم الاتصال: ${req.number}</p>
+  <p>رقم عملية الشام كاش: ${req.number}</p>
    <p>جهة الدفع: ${req.select}</p>
-<p>طريقة الدفع:${req.payment_method}</p>
  <P>الحالة:${req.status}</p>
-   ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
  </div>
  `
 
@@ -89,9 +67,7 @@ if (req.service_type === 'شام كاش'){
       <p>الميلغ بعد العمولة:${req.discount}</p>
         <p> معرف الاستخدام: ${req.number}</p>
         <p>الكمية: ${req.sham}</p>
-    <p>طريقة الدفع:${req.payment_method}</p>
      <P>الحالة:${req.status}</p>
-       ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
      </div>
      `
     }else if(req.service_type === 'العاب') {
@@ -102,7 +78,6 @@ if (req.service_type === 'شام كاش'){
         <p> معرف الاستخدام: ${req.number}</p>
         <p>الكمية: ${req.select}</p>
      <P>الحالة:${req.status}</p>
-       ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
      </div>
        
        `
@@ -110,8 +85,3 @@ if (req.service_type === 'شام كاش'){
 });
 }
 
-_supabase.channel('myrequests_realtime').on('postgres_changes', {event: '*', schema: 'public', table: 'requests'}, (payload) => {
-    displayrequests()
-})
-.subscribe()
-displayrequests()

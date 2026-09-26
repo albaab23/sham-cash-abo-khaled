@@ -15,7 +15,7 @@ async function addbutton() {
         sham: sham,
         number: number,
         select: select,
-        speed: speed,
+        discount: speed,
         secret_code: secretcode,
         status: "قيد الانتظار",
         note: '',

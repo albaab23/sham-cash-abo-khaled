@@ -6,16 +6,13 @@ async function addbutton() {
     let price = document.getElementById('price').value
     let number = document.getElementById('number').value
     let discount = document.getElementById('discount').value
-    let select = document.getElementById('select')
-    if (!price || !number  || !select) {
+    let select = document.getElementById('select').value
+    if (!price|| !number  || !select) {
         alert('يرجى ملئ جميع الحقول')
         return
-    }else if(price < 10000){
-        alert('يجب وضع 10000 على الاقل')
+    } else if(price < 10000){
+             alert('يجب وضع 10000 على الاقل')
         return
-    }else if(price){
-       let amount =  price * 17
-       discount.value = amount
     }
     
     let secretcode = crypto.randomUUID()
@@ -40,3 +37,11 @@ saved.push({id: data[0].id, secret_code: secretcode })
 localStorage.setItem('myrequests_ids', JSON.stringify(saved))
 window.location.href = 'myrequests.html'
 }
+price.addEventListener('input', function(){
+    let amount = price.value
+    if (amount >= 10000){
+        discount.value = amount * 17
+    }else {
+        discount.value = ''
+    }
+})

@@ -29,7 +29,7 @@ requests.forEach(  (req) => {
      <div class="container">
     <h1>نوع الخدمة: ${req.service_type}</h1>
     <P>الحالة:${req.status}</p>
-    <p>السرعة:${req.speed}</p>
+    <p>السرعة:${req.discount}</p>
       <p>الشركة :${req.select}</p>
      <p>رقم الاتصال:${req.sham}</p>
       <p>رقم الشام كاش:${req.number}</p>

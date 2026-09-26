@@ -227,6 +227,14 @@ footer span {
     color: var(--ink);
     font-size: 1.1rem;
 }
+.qrcode img {
+    width: 100%;
+    height: 220px;
+    margin-top: 12px;
+    object-fit: contain;
+    background: #f8fbfa;
+    border-radius: 14px;
+}
 
 @media (max-width: 768px) {
     .main {

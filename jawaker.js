@@ -40,7 +40,7 @@ window.location.href = 'myrequests.html'
 price.addEventListener('input', function(){
     let amount = price.value
     if (amount >= 10000){
-        discount.value = amount * 17
+        discount.value = amount * 1.7
     }else {
         discount.value = ''
     }

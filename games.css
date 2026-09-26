@@ -32,6 +32,18 @@ body {
     color: var(--ink);
     font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
 }
+.pay {
+    width: 100%;
+    margin: 18px 0 8px;
+    background: var(--brand-soft);
+    border-radius: 16px;
+    padding: 16px;
+}
+.pay p {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
 .main {
     display: flex;

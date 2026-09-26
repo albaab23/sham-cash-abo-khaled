@@ -32,3 +32,11 @@ saved.push({id: data[0].id, secret_code: secretcode })
 localStorage.setItem('myrequests_ids', JSON.stringify(saved))
 window.location.href = 'myrequests.html'
 }
+document.querySelectorAll('.english').forEach(function(input){
+    input.addEventListener('input', function() {
+        if(/[\u0600-\u06FF]/.test(this.value)) {
+            alert("عذرا يجب الكتابة بالانجليزية")
+            this.value = this.value.replace(/[\u0600-\u06FF]/g, '')
+        }
+    })
+})

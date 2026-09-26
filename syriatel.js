@@ -42,3 +42,11 @@ if(!isNaN(amount)) {
     discount.value = ''
 }
 })
+document.querySelectorAll('.english').forEach(function(input){
+    input.addEventListener('input', function() {
+        if(/[\u0600-\u06FF]/.test(this.value)) {
+            alert("عذرا يجب الكتابة بالانجليزية")
+            this.value = this.value.replace(/[\u0600-\u06FF]/g, '')
+        }
+    })
+})

@@ -3,7 +3,7 @@ const supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const _supabase = supabase.createClient(supabase_url, supabase_key)
 async function loadrequests() {
   const container = document.getElementById('requestslist')
-  const { data: requests, error } = await _supabase.from('requests').select('*').eq('status', 'قيد الانتظار').order('created_at', {ascending: false})
+  const { data: requests, error } = await _supabase.from('requests').select('*').order('created_at', {ascending: false})
   if (error) {
       container.innerHTML = '<p> لا توجد طلبات</p>'
       return

@@ -251,6 +251,10 @@ footer span {
         flex: 1;
         text-align: center;
     }
+    .pay {
+        width: 100%;
+        padding: 10px;
+    }
 
     .form,
     .cart {

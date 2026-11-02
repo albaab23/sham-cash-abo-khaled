@@ -5,9 +5,8 @@ async function addbutton() {
     let number = document.getElementById('selection').value
     let sham = document.getElementById('sham').value
     let discount = document.getElementById('charge').value
-    let price = document.getElementById('price').value
     let select = document.getElementById('number').value
-    if ( !number  || !select || !discount || !sham || !price ) {
+    if ( !number  || !select || !discount || !sham ) {
         alert('يرجى ملئ جميع الحقول')
         return
     }
@@ -17,7 +16,6 @@ async function addbutton() {
         number: number,
         select: select,
         discount: discount,
-        price:price,
         secret_code: secretcode,
         status: "قيد الانتظار",
         note: '',

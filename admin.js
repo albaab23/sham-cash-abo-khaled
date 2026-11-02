@@ -119,23 +119,6 @@ async function loadrequests() {
                <h1>رقم الأرضي:${req.sham}</h1>
            <p>الباقة:${req.discount}</p>
            <p>الباقة: ${req.number}</p>
-           <p>المبلغ المراد تحويله:${req.price}</p>
-            <p>رقم عملية الشام كاش: ${req.select}</p>
-          <P>الحالة:${req.status}</p>
-             <input type="text" id="note">
-                                           <div class="buttons">
-    <button onclick="updateStatus('${req.id}', 'مقبول ✅')" style="background-color: #2ecc71; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">قبول</button> 
-    <button onclick="updateStatus('${req.id}', 'مرفوض ❌')" style="background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">رفض</button>
-             </div>
-          </div>
-          `
-          }else if(req.service_type === "دفع فاتورة"){
-            container.innerHTML +=` <div class= "container">
-             <h1>نوع الخدمة: ${req.service_type}</h1>
-               <h1>رقم الأرضي:${req.sham}</h1>
-           <p>الباقة:${req.discount}</p>
-           <p>الباقة: ${req.number}</p>
-           <p>المبلغ المراد تحويله:${req.price}</p>
             <p>رقم عملية الشام كاش: ${req.select}</p>
           <P>الحالة:${req.status}</p>
              <input type="text" id="note">

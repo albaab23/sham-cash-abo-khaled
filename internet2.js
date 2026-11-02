@@ -2,12 +2,11 @@ const supabase_url =  '  https://tirzgdurubwiyankpvyi.supabase.co/'
 const supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpcnpnZHVydWJ3aXlhbmtwdnlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkzNDI3MDgsImV4cCI6MjEwNDkxODcwOH0.KMW5EtFYmKAI-kKTqcVEKKn3GyB5DBsRkuvBGg5xdjQ'
 const _supabase = supabase.createClient(supabase_url, supabase_key)
 async function addbutton() {
-    let number = document.getElementById('selection').value
+    let number = document.getElementById('number').value
     let sham = document.getElementById('sham').value
-    let discount = document.getElementById('charge').value
-    let price = document.getElementById('price').value
-    let select = document.getElementById('number').value
-    if ( !number  || !select || !discount || !sham || !price ) {
+    let select = document.getElementById('company').value
+    let speed = document.getElementById('speed').value
+    if ( !number  || !select || !speed || !sham) {
         alert('يرجى ملئ جميع الحقول')
         return
     }
@@ -16,12 +15,11 @@ async function addbutton() {
         sham: sham,
         number: number,
         select: select,
-        discount: discount,
-        price:price,
+        discount: speed,
         secret_code: secretcode,
         status: "قيد الانتظار",
         note: '',
-        service_type: "دفع فاتورة" 
+        service_type: 'فواتير' 
     }
     const {data, error} = await _supabase.from('requests').insert([newrequest]).select()
     if (error) {

@@ -113,6 +113,8 @@ ul li:hover a {
     padding: 16px;
     box-shadow: var(--shadow);
     cursor: pointer;
+    width: 100% !important;
+    object-fit: fill;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 

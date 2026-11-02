@@ -21,7 +21,7 @@ async function addbutton() {
         secret_code: secretcode,
         status: "قيد الانتظار",
         note: '',
-        service_type: 'انترنت' 
+        service_type: "دفع فاتورة" 
     }
     const {data, error} = await _supabase.from('requests').insert([newrequest]).select()
     if (error) {

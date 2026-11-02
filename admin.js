@@ -113,7 +113,19 @@ async function loadrequests() {
              </div>
              </div>
                `
-        }
+        }else if(req.service_type === 'انترنت'){
+            productcontainer.innerHTML +=` <div class= "container">
+             <h1>نوع الخدمة: ${req.service_type}</h1>
+               <h1>رقم الأرضي:${req.sham}</h1>
+           <p>الباقة:${req.discount}</p>
+           <p>الباقة: ${req.number}</p>
+           <p>المبلغ المراد تحويله:${req.price}</p>
+            <p>رقم عملية الشام كاش: ${req.select}</p>
+          <P>الحالة:${req.status}</p>
+            ${req.note ? `<p>الملاحظة:${req.note}</p>` : ''}
+          </div>
+          `
+          }
     })
 }
 async function updateStatus(id, newstatus) {
